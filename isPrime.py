@@ -4,7 +4,7 @@
 # # Question 1: a.	Write a function is Prime that returns true if a number is prime.
 # To Test/Run this function 
 # 1. Modify the call to the function isPrime() by passing the value that you want to check.
-# 2. Execute the command on the Terminal/CommandLine `python isPrime.py`
+# 2. Execute the command on the Terminal/CommandLine `python Main.py`
 
 def isPrime(valueTocheck):
     # Value passed should be an Integer otherwise reject with a false
