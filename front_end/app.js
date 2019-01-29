@@ -12,10 +12,31 @@
 
  */
 
-function loadPage() {
+async function fetchData() {
+   
+    const records = await fetch('https://swapi.co/api/people/');
+    const people_records = await records.json();
+    
+    return people_records;
+}
+
+ async function loadPage() {
+    let all_people = await fetchData();
+    let all_people_result = all_people.results
+    var tbody = document.getElementById('tbody');
+
+    for(var i = 0;i< all_people_result.length;i++){
+        let tr = "<tr><td>" + i + "</td> <td>" + all_people_result[i]['name'] + "</td> <td>" + all_people_result[i]['birth_year'] + "</td><td>" + all_people_result[i]['gender'] + "</td><td>" + all_people_result[i]['skin_color'] + "</td><td>" + 'View Details'+ "</td><td>" + 'Favorite'+ "</td></tr>";
+        tbody.innerHTML += tr;
+    }
+
+    
+    
+    console.log(all_people)
 
 }
 
+loadPage()
 /**
  * 
  */
